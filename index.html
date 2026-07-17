@@ -19,12 +19,12 @@
 <meta name="application-name" content="Fernanda &amp; Thiago">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <style>
 html,body,div,p,h1,h2,ul,li,button,a{margin:0;padding:0;border:0;box-sizing:border-box;-webkit-box-sizing:border-box;}
-:root{--red:#E50914;--gold:#C49E4E;--dark:#000;--white:#fff;--nav-h:68px;}
+:root{--red:#C9A876;--gold:#C9A876;--gold-light:#E4D4B8;--dark:#000;--white:#fff;--nav-h:68px;}
 html{width:100%;height:100%;background:#000;-webkit-text-size-adjust:100%;}
 body{width:100%;height:100%;background:#000;color:#fff;font-family:'Nunito',Helvetica,Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;}
 
@@ -62,9 +62,9 @@ body{width:100%;height:100%;background:#000;color:#fff;font-family:'Nunito',Helv
 
 /* ── Nav ── */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:0 4%;overflow:visible;}
-.logo{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:baseline;align-items:baseline;text-decoration:none;-webkit-user-select:none;user-select:none;-webkit-transition:opacity .3s ease;transition:opacity .3s ease;}
-.logo-c{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:var(--red);line-height:1;}
-.logo-g{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:#EDE8DE;line-height:1;}
+.logo{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:baseline;align-items:baseline;text-decoration:none;-webkit-user-select:none;user-select:none;-webkit-transition:opacity .3s ease;transition:opacity .3s ease;font-family:'Playfair Display',serif;}
+.logo-c{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-style:italic;font-size:clamp(22px,3vw,32px);letter-spacing:.02em;color:var(--gold);line-height:1;}
+.logo-g{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(22px,3vw,32px);letter-spacing:.02em;color:#F5EFE4;line-height:1;}
 
 /* ── Main ── */
 main{position:relative;z-index:10;padding-top:var(--nav-h);display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;}
@@ -72,7 +72,7 @@ main{position:relative;z-index:10;padding-top:var(--nav-h);display:-webkit-flex;
 /* ── Hero ── */
 .hero{-webkit-flex:1;flex:1;min-height:calc(100vh - var(--nav-h));padding:0 4% clamp(36px,5vh,64px);max-width:680px;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:flex-end;justify-content:flex-end;-webkit-animation:fadeUp .9s ease both;animation:fadeUp .9s ease both;overflow:visible;}
 .prod-label{font-family:'Nunito',sans-serif;font-size:clamp(10px,1.2vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.film-title{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(48px,8vw,96px);line-height:.95;color:#fff;text-shadow:0 2px 32px rgba(0,0,0,.6);white-space:nowrap;letter-spacing:.02em;}
+.film-title{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(44px,7.5vw,92px);line-height:1.02;color:#F5EFE4;text-shadow:0 2px 32px rgba(0,0,0,.6);letter-spacing:.01em;}
 .film-title .amp{color:var(--red);}
 .film-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(14px,1.6vw,18px);color:rgba(255,255,255,.66);line-height:1.65;margin:18px 0 28px;max-width:440px;}
 
@@ -82,7 +82,7 @@ main{position:relative;z-index:10;padding-top:var(--nav-h);display:-webkit-flex;
 .accordion{width:100%;max-width:480px;margin-top:24px;}
 details.acc{border-bottom:1px solid rgba(255,255,255,.12);}
 details.acc:first-of-type{border-top:1px solid rgba(255,255,255,.12);}
-details.acc summary{list-style:none;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:13px 0;cursor:pointer;color:#fff;font-family:'Nunito',sans-serif;font-size:clamp(11px,1.3vw,13px);font-weight:500;letter-spacing:.2em;text-transform:uppercase;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}details.acc summary::-webkit-details-marker{display:none;}details.acc summary::marker{display:none;}details.acc summary::after{content:'+';font-size:20px;font-weight:200;color:rgba(255,255,255,.55);-webkit-flex-shrink:0;flex-shrink:0;line-height:1;margin-left:12px;}details.acc[open] summary::after{content:'\2212';}
+details.acc summary{list-style:none;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:16px;padding:13px 0;cursor:pointer;color:#F5EFE4;font-family:'Nunito',sans-serif;font-size:clamp(11px,1.3vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}details.acc summary::before{content:'';-webkit-flex:1;flex:1;height:1px;background:rgba(201,168,118,.35);order:2;}details.acc summary::-webkit-details-marker{display:none;}details.acc summary::marker{display:none;}details.acc summary::after{content:'+';font-size:20px;font-weight:200;color:var(--gold);-webkit-flex-shrink:0;flex-shrink:0;line-height:1;order:3;}details.acc[open] summary::after{content:'\2212';}
 details.acc summary:hover{color:rgba(255,255,255,.72);}
 
 
@@ -92,10 +92,38 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
 
 .acc-content{padding:6px 0 18px;}
 /* Lista de episódios no acordeão */
-.ep-list{list-style:none;padding:0;margin:0;}
-.ep-item{border-bottom:1px solid rgba(255,255,255,.06);}.ep-link{display:-webkit-flex;display:flex;-webkit-align-items:flex-start;align-items:flex-start;gap:14px;padding:12px 0;background:none;border:none;color:inherit;width:100%;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit;}
-.ep-item:last-child{border-bottom:none;}.ep-link:hover .ep-play-ov,.ep-link:focus .ep-play-ov{background:rgba(0,0,0,.45);}
-.ep-thumb-wrap{position:relative;-webkit-flex-shrink:0;flex-shrink:0;width:clamp(110px,14vw,170px);}
+/* ── Lista de episódios: cards horizontais estilo editorial ── */
+.ep-list{
+  list-style:none;padding:0;margin:0;
+  display:-webkit-flex;display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;-ms-overflow-style:none;
+  padding-bottom:4px;
+}
+.ep-list::-webkit-scrollbar{display:none;}
+.ep-item{
+  -webkit-flex-shrink:0;flex-shrink:0;
+  width:clamp(240px,26vw,320px);
+  border-bottom:none;
+  border:1px solid rgba(201,168,118,.18);
+  background:rgba(255,255,255,.015);
+  -webkit-transition:border-color .25s ease,background .25s ease;
+  transition:border-color .25s ease,background .25s ease;
+}
+.ep-item:hover{border-color:rgba(201,168,118,.5);background:rgba(201,168,118,.04);}
+.ep-link{
+  display:-webkit-flex;display:flex;
+  -webkit-flex-direction:column;flex-direction:column;
+  gap:0;padding:0;
+  background:none;border:none;color:inherit;
+  width:100%;text-align:left;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;font-family:inherit;
+}
+.ep-link:hover .ep-play-ov,.ep-link:focus .ep-play-ov{background:rgba(0,0,0,.4);}
+.ep-thumb-wrap{position:relative;-webkit-flex-shrink:0;flex-shrink:0;width:100%;}
 .ep-thumb-sizer{width:100%;padding-top:56.25%;display:block;}
 .ep-thumb-ph{position:absolute;inset:0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;background:linear-gradient(135deg,#1c1c1c,#252525);border-radius:3px;}
 .ep-thumb-ph svg{width:22px;height:22px;opacity:.22;}
@@ -104,10 +132,41 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
 
 .ep-play-ov svg{width:30px;height:30px;opacity:0;-webkit-transform:scale(.8);transform:scale(.8);-webkit-transition:opacity .18s,-webkit-transform .18s;transition:opacity .18s,transform .18s;}
 .ep-link:hover .ep-play-ov svg,.ep-link:focus .ep-play-ov svg{opacity:1;-webkit-transform:scale(1);transform:scale(1);}
-.ep-info{-webkit-flex:1;flex:1;min-width:0;padding-top:2px;}
-.ep-num{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;margin-bottom:3px;}
-.ep-title{font-family:'Nunito',sans-serif;font-size:clamp(12px,1.4vw,15px);font-weight:500;color:#fff;margin-bottom:3px;}
-.ep-meta{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.3);margin-bottom:5px;}
+.ep-info{
+  -webkit-flex:1;flex:1;min-width:0;
+  padding:16px 18px 18px;
+  display:-webkit-flex;display:flex;
+  -webkit-align-items:flex-start;align-items:flex-start;
+  gap:14px;
+}
+.ep-num{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(26px,3vw,34px);
+  font-weight:500;
+  color:var(--gold);
+  line-height:1;
+  -webkit-flex-shrink:0;flex-shrink:0;
+  opacity:.85;
+}
+.ep-info-text{min-width:0;-webkit-flex:1;flex:1;padding-top:4px;}
+.ep-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(15px,1.6vw,18px);
+  font-weight:500;
+  color:#F5EFE4;
+  margin-bottom:8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ep-title-rule{
+  width:22px;height:1px;
+  background:rgba(201,168,118,.6);
+  margin-bottom:9px;
+}
+.ep-meta{
+  font-family:'Nunito',sans-serif;font-size:11px;
+  color:rgba(245,239,228,.4);
+  letter-spacing:.04em;
+}
 .ep-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(11px,1.2vw,14px);color:rgba(255,255,255,.5);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .acc-placeholder{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(12px,1.3vw,15px);color:rgba(255,255,255,.4);padding:4px 0 2px;}
 
@@ -189,8 +248,9 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
   left:50%;top:50%;
   -webkit-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
-  font-family:'Bebas Neue',Helvetica,sans-serif;
-  font-size:clamp(24px,3.2vw,34px);
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(20px,2.8vw,28px);
   letter-spacing:.04em;color:#EDE8DE;
   opacity:0;pointer-events:none;
   white-space:nowrap;
@@ -208,53 +268,6 @@ details.acc[open] .ep-item:nth-child(1){-webkit-animation-delay:.03s;animation-d
 details.acc[open] .ep-item:nth-child(2){-webkit-animation-delay:.09s;animation-delay:.09s;}
 details.acc[open] .ep-item:nth-child(3){-webkit-animation-delay:.15s;animation-delay:.15s;}
 details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-delay:.21s;}
-
-/* ── Preview card (hover Netflix-style) ── */
-#preview-card{
-  position:fixed;z-index:300;
-  width:clamp(260px,28vw,360px);
-  background:#141414;
-  border-radius:6px;
-  overflow:hidden;
-  box-shadow:0 8px 40px rgba(0,0,0,.8),0 2px 12px rgba(0,0,0,.6);
-  opacity:0;pointer-events:none;
-  transform:scale(.92) translateY(6px);
-  -webkit-transform:scale(.92) translateY(6px);
-  transition:opacity .22s ease,transform .22s ease,-webkit-transform .22s ease;
-  will-change:transform,opacity;
-}
-#preview-card.visible{
-  opacity:1;pointer-events:all;
-  transform:none;-webkit-transform:none;
-}
-.pv-video{position:relative;width:100%;padding-top:56.25%;background:#000;}
-.pv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
-.pv-overlay{
-  position:absolute;inset:0;
-  display:-webkit-flex;display:flex;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  background:rgba(0,0,0,.18);
-}
-.pv-play{
-  width:44px;height:44px;border-radius:50%;
-  border:2px solid rgba(255,255,255,.9);
-  background:rgba(0,0,0,.35);
-  display:-webkit-flex;display:flex;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  cursor:pointer;
-  transition:background .15s,transform .15s;
-  -webkit-transition:background .15s,-webkit-transform .15s;
-}
-.pv-play:hover{background:rgba(255,255,255,.2);transform:scale(1.08);}
-.pv-play svg{width:18px;height:18px;margin-left:2px;}
-.pv-info{padding:12px 14px 14px;}
-.pv-row{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:8px;margin-bottom:6px;}
-.pv-num{font-family:'Nunito',sans-serif;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.4);}
-.pv-title{font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#fff;}
-.pv-meta{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.04em;margin-bottom:7px;}
-.pv-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:13px;color:rgba(255,255,255,.6);line-height:1.5;}
 
 /* ── Descrição expansível ao clicar no episódio ── */
 .ep-item{position:relative;}
@@ -319,9 +332,9 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 }
 .rotate-text strong{
   display:block;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:22px;letter-spacing:.12em;
-  color:#fff;margin-bottom:6px;
+  font-family:'Playfair Display',serif;font-weight:500;
+  font-size:20px;letter-spacing:.06em;
+  color:#F5EFE4;margin-bottom:6px;
 }
 
 /* ── Tela de login ── */
@@ -339,17 +352,18 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 #login-screen.hidden{opacity:0;pointer-events:none;}
 
 .login-logo{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(28px,5vw,42px);
-  letter-spacing:.18em;
-  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:clamp(26px,4.6vw,38px);
+  letter-spacing:.06em;
+  color:#F5EFE4;
   text-align:center;
 }
-.login-logo span{color:var(--red);}
+.login-logo span{color:var(--gold);font-style:italic;}
 
 .login-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(201,168,118,.22);
   border-radius:12px;
   padding:36px 40px;
   max-width:380px;width:100%;
@@ -368,9 +382,10 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 }
 .login-title strong{
   display:block;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:22px;letter-spacing:.12em;
-  color:#fff;margin-bottom:4px;
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:19px;letter-spacing:.06em;
+  color:#F5EFE4;margin-bottom:6px;
 }
 
 /* Botão Google */
@@ -465,8 +480,8 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 .modal-error.show{display:-webkit-flex;display:flex;}
 .modal-error-icon{font-size:38px;opacity:.5;}
 .modal-error-title{
-  font-family:'Bebas Neue',sans-serif;font-size:20px;
-  letter-spacing:.12em;color:#fff;
+  font-family:'Playfair Display',serif;font-weight:500;font-size:19px;
+  letter-spacing:.04em;color:#F5EFE4;
 }
 .modal-error-text{
   font-family:'Nunito',sans-serif;font-size:14px;
@@ -593,9 +608,12 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <p class="ep-num">1</p>
-              <p class="ep-title">Cerimônia</p>
-              <p class="ep-meta">Filme completo</p>
+              <span class="ep-num">01</span>
+              <div class="ep-info-text">
+                <p class="ep-title">Cerimônia</p>
+                <div class="ep-title-rule"></div>
+                <p class="ep-meta">Filme completo</p>
+              </div>
             </div>
           </button>
         </li>
@@ -608,9 +626,12 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <p class="ep-num">2</p>
-              <p class="ep-title">Recepção</p>
-              <p class="ep-meta">Filme completo</p>
+              <span class="ep-num">02</span>
+              <div class="ep-info-text">
+                <p class="ep-title">Recepção</p>
+                <div class="ep-title-rule"></div>
+                <p class="ep-meta">Filme completo</p>
+              </div>
             </div>
           </button>
         </li>
@@ -623,9 +644,12 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <p class="ep-num">3</p>
-              <p class="ep-title">Making of</p>
-              <p class="ep-meta">Curta-metragem</p>
+              <span class="ep-num">03</span>
+              <div class="ep-info-text">
+                <p class="ep-title">Making of</p>
+                <div class="ep-title-rule"></div>
+                <p class="ep-meta">Curta-metragem</p>
+              </div>
             </div>
           </button>
         </li>
@@ -638,9 +662,12 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <p class="ep-num">4</p>
-              <p class="ep-title">Teaser</p>
-              <p class="ep-meta">Curta-metragem</p>
+              <span class="ep-num">04</span>
+              <div class="ep-info-text">
+                <p class="ep-title">Teaser</p>
+                <div class="ep-title-rule"></div>
+                <p class="ep-meta">Curta-metragem</p>
+              </div>
             </div>
           </button>
         </li>
@@ -952,114 +979,8 @@ document.querySelector('#acc-ep .acc-header').setAttribute('aria-expanded','true
 document.getElementById('body-ep').style.display = 'block';
 </script>
 
-<!-- Preview card Netflix-style -->
-<div id="preview-card" role="tooltip" aria-hidden="true">
-  <div class="pv-video">
-    <iframe id="pv-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Preview"></iframe>
-    <div class="pv-overlay">
-      <button class="pv-play" id="pv-play-btn" aria-label="Reproduzir">
-        <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="pv-info">
-    <div class="pv-row">
-      <span class="pv-num" id="pv-num"></span>
-      <span class="pv-title" id="pv-title"></span>
-    </div>
-    <div class="pv-meta" id="pv-meta"></div>
-    <div class="pv-desc" id="pv-desc"></div>
-  </div>
-</div>
 
-<script>
-/* ═══ Preview card hover (somente pointer:fine = mouse) ══════════════════════ */
-(function(){
-  if (!window.matchMedia || !window.matchMedia('(pointer:fine)').matches) return;
 
-  var card    = document.getElementById('preview-card');
-  var iframe  = document.getElementById('pv-iframe');
-  var playBtn = document.getElementById('pv-play-btn');
-  var MARGIN  = 16;
-  var timer   = null;
-  var current = null;
-
-  function showCard(item, e) {
-    var vid   = item.dataset.vid;
-    var num   = item.dataset.num;
-    var title = item.dataset.title;
-    var meta  = item.dataset.meta;
-    var desc  = item.dataset.desc;
-
-    document.getElementById('pv-num').textContent   = 'EP ' + num;
-    document.getElementById('pv-title').textContent = title;
-    document.getElementById('pv-meta').textContent  = meta;
-    document.getElementById('pv-desc').textContent  = desc;
-
-    /* carrega preview mudo */
-    iframe.src = 'https://www.youtube.com/embed/' + vid
-      + '?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&loop=1&playlist=' + vid;
-
-    /* botão play abre o modal */
-    playBtn.onclick = function(ev){ ev.stopPropagation(); openModal(vid); hideCard(); };
-
-    positionCard(item);
-    card.classList.add('visible');
-    card.setAttribute('aria-hidden','false');
-    current = item;
-  }
-
-  function hideCard() {
-    card.classList.remove('visible');
-    card.setAttribute('aria-hidden','true');
-    setTimeout(function(){
-      if (!card.classList.contains('visible')) iframe.src = '';
-    }, 250);
-    current = null;
-  }
-
-  function positionCard(item) {
-    var r   = item.getBoundingClientRect();
-    var cw  = card.offsetWidth  || 320;
-    var ch  = card.offsetHeight || 220;
-    var vw  = window.innerWidth;
-    var vh  = window.innerHeight;
-
-    /* horizontal: preferência à direita do item */
-    var left = r.right + MARGIN;
-    if (left + cw > vw - MARGIN) left = r.left - cw - MARGIN;
-    if (left < MARGIN) left = MARGIN;
-
-    /* vertical: centralizado no item, nunca fora da tela */
-    var top = r.top + (r.height / 2) - (ch / 2);
-    top = Math.max(MARGIN, Math.min(top, vh - ch - MARGIN));
-
-    card.style.left = left + 'px';
-    card.style.top  = top  + 'px';
-  }
-
-  /* eventos nos ep-items */
-  document.querySelectorAll('.ep-item[data-vid]').forEach(function(item){
-    item.addEventListener('mouseenter', function(){
-      timer = setTimeout(function(){ showCard(item); }, 480);
-    });
-    item.addEventListener('mouseleave', function(){
-      clearTimeout(timer);
-      /* fecha só se o mouse não for para o próprio card */
-      setTimeout(function(){
-        if (!card.matches(':hover')) hideCard();
-      }, 120);
-    });
-  });
-
-  card.addEventListener('mouseleave', hideCard);
-
-  /* reposiciona ao rolar */
-  window.addEventListener('scroll', function(){
-    if (current) positionCard(current);
-  }, { passive: true });
-})();
-</script>
 <script>
 /* ── Episódios: clique/tap abre modal diretamente ── */
 (function(){
@@ -1179,8 +1100,8 @@ if ('serviceWorker' in navigator) {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 var AUTHORIZED_EMAILS = [
-  'contato@cinegraphya.com.br',   // Cinegraphya (acesso permanente)
-  // 'fernandaethiago@gmail.com', // ← descomente e adicione o e-mail do casal aqui
+  'contato@cinegraphya.com.br',        // Cinegraphya (acesso permanente)
+  'fernandamendesmiranda@gmail.com',   // Fernanda (casal)
 ];
 
 var CLIENT_ID = '554655824814-9tn92aiunh1rb62jv6t7vi1caaq3r96j.apps.googleusercontent.com';
