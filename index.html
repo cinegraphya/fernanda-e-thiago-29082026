@@ -375,24 +375,12 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 
 /* Botão Google */
 #google-signin-btn{
-  display:-webkit-flex;display:flex;
-  -webkit-align-items:center;align-items:center;
-  gap:12px;
-  background:#fff;
-  color:#3c4043;
-  font-family:'Nunito',sans-serif;
-  font-size:15px;font-weight:600;
-  border:none;border-radius:8px;
-  padding:12px 24px;
-  cursor:pointer;
   width:100%;
+  display:-webkit-flex;display:flex;
   -webkit-justify-content:center;justify-content:center;
-  -webkit-transition:background .15s,box-shadow .15s;
-  transition:background .15s,box-shadow .15s;
-  box-shadow:0 2px 8px rgba(0,0,0,.3);
+  min-height:44px;
 }
-#google-signin-btn:hover{background:#f1f3f4;box-shadow:0 4px 16px rgba(0,0,0,.4);}
-#google-signin-btn svg{width:20px;height:20px;-webkit-flex-shrink:0;flex-shrink:0;}
+#google-signin-btn iframe{margin:0 auto !important;}
 
 .login-error{
   font-family:'Nunito',sans-serif;
@@ -489,7 +477,6 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
 /* Foco visível para navegação por teclado (não aparece no clique do mouse) */
 .ep-link:focus-visible,
 .modal-close:focus-visible,
-#google-signin-btn:focus-visible,
 details.acc summary:focus-visible{
   outline:3px solid var(--red);
   outline-offset:3px;
@@ -1170,15 +1157,9 @@ if ('serviceWorker' in navigator) {
       <strong>ACESSO EXCLUSIVO</strong>
       Este conteúdo é privado.<br>Faça login com o e-mail autorizado.
     </div>
-    <button id="google-signin-btn" aria-label="Entrar com Google">
-      <!-- Ícone Google -->
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.36-8.16 2.36-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-        <path fill="none" d="M0 0h48v48H0z"/>
-      </svg>
+    <!-- O Google renderiza o botão oficial aqui (compatível com todos os browsers) -->
+    <div id="google-signin-btn" aria-label="Entrar com Google"></div>
+    <button id="google-signin-fallback" style="display:none;" type="button">
       Entrar com Google
     </button>
     <div class="login-error" id="login-error">
@@ -1217,34 +1198,42 @@ function initGoogleLogin() {
     return;
   }
 
+  function handleCredential(response) {
+    try {
+      var payload = JSON.parse(atob(response.credential.split('.')[1]));
+      var email   = (payload.email || '').toLowerCase().trim();
+      var allowed = AUTHORIZED_EMAILS.map(function(e){ return e.toLowerCase().trim(); });
+
+      if (allowed.indexOf(email) !== -1) {
+        sessionStorage.setItem('cg_user', email);
+        errEl.classList.remove('show');
+        unlockContent();
+      } else {
+        errEl.classList.add('show');
+      }
+    } catch(e) {
+      errEl.classList.add('show');
+    }
+  }
+
   /* Inicializa Google Identity Services */
   google.accounts.id.initialize({
     client_id: CLIENT_ID,
-    callback: function(response) {
-      try {
-        /* Decodifica o JWT retornado pelo Google */
-        var payload = JSON.parse(atob(response.credential.split('.')[1]));
-        var email   = (payload.email || '').toLowerCase().trim();
-        var allowed = AUTHORIZED_EMAILS.map(function(e){ return e.toLowerCase().trim(); });
-
-        if (allowed.indexOf(email) !== -1) {
-          sessionStorage.setItem('cg_user', email);
-          errEl.classList.remove('show');
-          unlockContent();
-        } else {
-          errEl.classList.add('show');
-        }
-      } catch(e) {
-        errEl.classList.add('show');
-      }
-    },
-    auto_select: true,   /* tenta login silencioso se já logado no browser */
-    cancel_on_tap_outside: false,
+    callback: handleCredential,
+    use_fedcm_for_prompt: true,
   });
 
-  /* Botão manual */
-  signBtn.addEventListener('click', function() {
-    google.accounts.id.prompt();
+  /* Renderiza o BOTÃO OFICIAL do Google (compatível com Firefox/Safari/
+     bloqueadores de rastreamento — não depende de cookies de terceiros
+     como o método prompt()/One Tap depende) */
+  google.accounts.id.renderButton(signBtn, {
+    type: 'standard',
+    theme: 'filled_white',
+    size: 'large',
+    text: 'signin_with',
+    shape: 'rectangular',
+    logo_alignment: 'left',
+    width: 300,
   });
 }
 
