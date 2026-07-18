@@ -96,28 +96,25 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
 /* ── Lista de episódios: cards horizontais estilo editorial ── */
 .ep-list{
   list-style:none;padding:0;margin:0;
-  display:-webkit-flex;display:flex;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
   gap:14px;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;-ms-overflow-style:none;
-  padding-bottom:4px;
 }
-.ep-list::-webkit-scrollbar{display:none;}
+@media(max-width:640px){
+  .ep-list{grid-template-columns:1fr;}
+}
 .ep-item{
-  -webkit-flex-shrink:0;flex-shrink:0;
   position:relative;
-  width:clamp(300px,30vw,480px);
-  height:clamp(104px,9.5vw,148px);
+  width:100%;
+  height:clamp(100px,9vw,140px);
   border:1px solid rgba(201,168,118,.3);
   background:#0b0a08;
   overflow:hidden;
   -webkit-transition:border-color .25s ease;
   transition:border-color .25s ease;
 }
-@media(max-width:768px){
-  .ep-item{width:min(82vw,360px);height:104px;}
+@media(max-width:640px){
+  .ep-item{height:104px;}
 }
 .ep-item:hover{border-color:rgba(201,168,118,.7);}
 .ep-link{
@@ -567,41 +564,6 @@ details.acc summary:focus-visible{
 }
 #offline-banner.show{-webkit-transform:none;transform:none;}
 
-/* ── Wrapper do carrossel de episódios: setas + fade de borda ── */
-.ep-carousel{position:relative;}
-.ep-carousel::after{
-  content:'';
-  position:absolute;top:0;right:0;bottom:4px;
-  width:64px;
-  background:linear-gradient(to right,transparent,#000 92%);
-  pointer-events:none;
-  opacity:1;-webkit-transition:opacity .25s ease;transition:opacity .25s ease;
-}
-.ep-carousel.at-end::after{opacity:0;}
-.ep-arrow{
-  position:absolute;z-index:5;
-  width:42px;height:42px;
-  top:calc(50% - 21px);
-  display:-webkit-flex;display:flex;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  background:rgba(0,0,0,.45);
-  border:1px solid rgba(201,168,118,.55);
-  border-radius:50%;
-  cursor:pointer;color:var(--gold);
-  opacity:0;pointer-events:none;
-  -webkit-transition:opacity .25s ease,background .2s ease;
-  transition:opacity .25s ease,background .2s ease;
-  -webkit-tap-highlight-color:transparent;
-}
-.ep-arrow.show{opacity:1;pointer-events:all;}
-.ep-arrow:hover{background:rgba(201,168,118,.22);}
-.ep-arrow.prev{left:4px;}
-.ep-arrow.next{right:4px;}
-.ep-arrow svg{width:17px;height:17px;}
-@media(max-width:768px){
-  .ep-arrow{width:36px;height:36px;top:calc(50% - 18px);}
-}
 </style>
 </head>
 <body>
@@ -655,11 +617,7 @@ details.acc summary:focus-visible{
     <details class="acc" open>
       <summary>EPISÓDIOS</summary>
       <div class="acc-content">
-        <div class="ep-carousel" id="ep-carousel">
-          <button class="ep-arrow prev" id="ep-prev" aria-label="Anterior" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <ul class="ep-list" role="list" id="ep-list">
+        <ul class="ep-list" role="list" id="ep-list">
         <li class="ep-item" data-vid="dQw4w9WgXcQ" data-num="1" data-title="Cerimônia" data-meta="Filme completo" data-desc="O momento mais sagrado: votos, aliança e o início de uma nova história.">
           <button class="ep-link" type="button" aria-label="Reproduzir: Cerimônia">
             <div class="ep-thumb-wrap">
@@ -732,11 +690,7 @@ details.acc summary:focus-visible{
             </div>
           </button>
         </li>
-          </ul>
-          <button class="ep-arrow next show" id="ep-next" aria-label="Próximo" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
+        </ul>
       </div>
     </details>
 
@@ -1010,42 +964,6 @@ document.addEventListener('keydown',function(e){
       }
     });
   });
-})();
-
-/* ═══ Carrossel de episódios: setas + fade dinâmico ═══════════════════════ */
-(function(){
-  var wrap = document.getElementById('ep-carousel');
-  var list = document.getElementById('ep-list');
-  var prev = document.getElementById('ep-prev');
-  var next = document.getElementById('ep-next');
-  if (!wrap || !list || !prev || !next) return;
-
-  function cardStep(){
-    var card = list.querySelector('.ep-item');
-    if (!card) return 300;
-    var style = window.getComputedStyle(list);
-    var gap = parseFloat(style.gap || style.columnGap || 14);
-    return card.getBoundingClientRect().width + gap;
-  }
-
-  function updateArrows(){
-    var atStart = list.scrollLeft <= 4;
-    var atEnd   = list.scrollLeft + list.clientWidth >= list.scrollWidth - 4;
-    prev.classList.toggle('show', !atStart);
-    next.classList.toggle('show', !atEnd);
-    wrap.classList.toggle('at-end', atEnd);
-  }
-
-  prev.addEventListener('click', function(){
-    list.scrollBy({ left: -cardStep() * 2, behavior: 'smooth' });
-  });
-  next.addEventListener('click', function(){
-    list.scrollBy({ left: cardStep() * 2, behavior: 'smooth' });
-  });
-
-  list.addEventListener('scroll', updateArrows, { passive: true });
-  window.addEventListener('resize', updateArrows, { passive: true });
-  updateArrows();
 })();
 
 function toggleAcc(id) {
