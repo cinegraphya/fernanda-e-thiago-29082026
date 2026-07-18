@@ -70,17 +70,16 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:
 main{position:relative;z-index:10;padding-top:var(--nav-h);display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;}
 
 /* ── Hero ── */
-.hero{min-height:calc(100vh - var(--nav-h));padding:0 4%;width:100%;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:center;justify-content:center;-webkit-animation:fadeUp .9s ease both;animation:fadeUp .9s ease both;overflow:visible;}
-.content-below{width:100%;padding:0 4% clamp(48px,7vh,88px);}
+.hero{min-height:calc(100vh - var(--nav-h));padding:0 4% clamp(28px,4vh,56px);width:100%;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:flex-end;justify-content:flex-end;-webkit-animation:fadeUp .9s ease both;animation:fadeUp .9s ease both;overflow:visible;}
 .prod-label{font-family:'Nunito',sans-serif;font-size:clamp(10px,1.2vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
 .film-title{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(44px,7.5vw,92px);line-height:1.02;color:#F5EFE4;text-shadow:0 2px 32px rgba(0,0,0,.6);letter-spacing:.01em;max-width:720px;}
 .film-title .amp{color:var(--red);}
-.film-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(14px,1.6vw,18px);color:rgba(255,255,255,.66);line-height:1.65;margin:18px 0 28px;max-width:440px;}
+.film-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(13px,1.5vw,17px);color:rgba(255,255,255,.66);line-height:1.55;margin:14px 0 18px;max-width:440px;}
 
 
 
 /* ── Acordeão suspenso ── */
-.accordion{width:100%;margin-top:24px;}
+.accordion{width:100%;margin-top:6px;}
 details.acc{border-bottom:1px solid rgba(255,255,255,.12);}
 details.acc:first-of-type{border-top:1px solid rgba(255,255,255,.12);}
 details.acc summary{list-style:none;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:16px;padding:13px 0;cursor:pointer;color:#F5EFE4;font-family:'Nunito',sans-serif;font-size:clamp(11px,1.3vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}details.acc summary::before{content:'';-webkit-flex:1;flex:1;height:1px;background:rgba(201,168,118,.35);order:2;}details.acc summary::-webkit-details-marker{display:none;}details.acc summary::marker{display:none;}details.acc summary::after{content:'+';font-size:20px;font-weight:200;color:var(--gold);-webkit-flex-shrink:0;flex-shrink:0;line-height:1;order:3;}details.acc[open] summary::after{content:'\2212';}
@@ -100,7 +99,7 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
   grid-template-columns:repeat(2,1fr);
   gap:14px;
 }
-@media(max-width:640px){
+@media(max-width:420px){
   .ep-list{grid-template-columns:1fr;}
 }
 .ep-item{
@@ -114,7 +113,7 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
   transition:border-color .25s ease;
 }
 @media(max-width:640px){
-  .ep-item{height:104px;}
+  .ep-item{height:88px;}
 }
 .ep-item:hover{border-color:rgba(201,168,118,.7);}
 .ep-link{
@@ -608,9 +607,7 @@ details.acc summary:focus-visible{
     <h1 class="film-title">FERNANDA <span class="amp">&amp;</span> THIAGO</h1>
   </div>
     <p class="film-desc">Uma história de amor eternizada em imagens. A memória de um dos dias mais especiais de nossas vidas.</p>
-  </div>
 
-  <section class="content-below">
   <!-- ACORDEÃO NATIVO — funciona sem JavaScript (iOS Quick Look, WhatsApp) -->
   <div class="accordion">
 
@@ -709,7 +706,7 @@ details.acc summary:focus-visible{
     </details>
 
   </div>
-  </section>
+  </div>
 </main>
 
 <!-- MODAL -->
