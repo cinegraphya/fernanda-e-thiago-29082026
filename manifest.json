@@ -3,7 +3,7 @@
   "short_name": "F & T",
   "description": "Uma história de amor eternizada em imagens.",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "landscape",
   "background_color": "#000000",
   "theme_color": "#000000",
@@ -27,5 +27,11 @@
       "type": "image/png"
     }
   ],
-  "categories": ["entertainment"]
+  "categories": [
+    "entertainment"
+  ],
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ]
 }
