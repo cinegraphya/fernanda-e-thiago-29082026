@@ -20,7 +20,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <style>
 html,body,div,p,h1,h2,ul,li,button,a{margin:0;padding:0;border:0;box-sizing:border-box;-webkit-box-sizing:border-box;}
@@ -352,80 +351,6 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
   color:#F5EFE4;margin-bottom:6px;
 }
 
-/* ── Tela de login ── */
-#login-screen{
-  position:fixed;inset:0;z-index:99998;
-  background:#000;
-  display:-webkit-flex;display:flex;
-  -webkit-flex-direction:column;flex-direction:column;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  gap:32px;
-  padding:32px;
-  -webkit-transition:opacity .5s ease;transition:opacity .5s ease;
-}
-#login-screen.hidden{opacity:0;pointer-events:none;}
-
-.login-logo{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(28px,5vw,42px);
-  letter-spacing:.18em;
-  color:#F5EFE4;
-  text-align:center;
-}
-.login-logo span{color:var(--gold);}
-
-.login-card{
-  background:rgba(255,255,255,.02);
-  border:1px solid rgba(201,168,118,.22);
-  border-radius:12px;
-  padding:36px 40px;
-  max-width:380px;width:100%;
-  text-align:center;
-  display:-webkit-flex;display:flex;
-  -webkit-flex-direction:column;flex-direction:column;
-  -webkit-align-items:center;align-items:center;
-  gap:20px;
-}
-.login-title{
-  font-family:'Nunito',sans-serif;
-  font-size:15px;font-weight:300;
-  color:rgba(255,255,255,.6);
-  line-height:1.6;
-  letter-spacing:.02em;
-}
-.login-title strong{
-  display:block;
-  font-family:'Playfair Display',serif;
-  font-weight:500;
-  font-size:19px;letter-spacing:.06em;
-  color:#F5EFE4;margin-bottom:6px;
-}
-
-/* Botão Google */
-#google-signin-btn{
-  width:100%;
-  display:-webkit-flex;display:flex;
-  -webkit-justify-content:center;justify-content:center;
-  min-height:44px;
-}
-#google-signin-btn iframe{margin:0 auto !important;}
-
-.login-error{
-  font-family:'Nunito',sans-serif;
-  font-size:13px;color:#ff6b6b;
-  display:none;padding:10px 14px;
-  background:rgba(255,107,107,.1);
-  border-radius:6px;width:100%;
-  line-height:1.5;
-}
-.login-error.show{display:block;}
-.login-footer{
-  font-family:'Nunito',sans-serif;
-  font-size:12px;color:rgba(255,255,255,.25);
-  letter-spacing:.04em;
-}
-
 /* ── Intro vídeo ── */
 #intro-screen{
   position:fixed;inset:0;z-index:99999;
@@ -447,14 +372,6 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
   object-fit:contain;
   display:block;
 }
-/* Login começa invisível */
-#login-screen{
-  opacity:0 !important;
-  -webkit-transition:opacity 1s ease !important;
-  transition:opacity 1s ease !important;
-}
-#login-screen.fade-in{opacity:1 !important;}
-
 /* ── Loading spinner do player ── */
 .modal-loader{
   position:absolute;inset:0;
@@ -1087,128 +1004,16 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-<!-- ═══ TELA DE LOGIN ═══════════════════════════════════════════════════════ -->
-<div id="login-screen">
-  <div class="login-logo">CINE<span>GRAPHYA</span></div>
-  <div class="login-card">
-    <div class="login-title">
-      <strong>ACESSO EXCLUSIVO</strong>
-      Este conteúdo é privado.<br>Faça login com o e-mail autorizado.
-    </div>
-    <!-- O Google renderiza o botão oficial aqui (compatível com todos os browsers) -->
-    <div id="google-signin-btn" aria-label="Entrar com Google"></div>
-    <button id="google-signin-fallback" style="display:none;" type="button">
-      Entrar com Google
-    </button>
-    <div class="login-error" id="login-error">
-      ⚠️ Este e-mail não tem acesso autorizado.<br>
-      Use o e-mail cadastrado para este conteúdo.
-    </div>
-  </div>
-  <div class="login-footer">Cinegraphya · Acesso restrito</div>
-</div>
-<!-- ════════════════════════════════════════════════════════════════════════ -->
-
-
 <script>
-/* ═══════════════════════════════════════════════════════════════════════════
-   GOOGLE OAUTH LOGIN — Cinegraphya
-   ▸ Adicione ou remova e-mails autorizados na lista abaixo
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-var AUTHORIZED_EMAILS = [
-  'contato@cinegraphya.com.br',        // Cinegraphya (acesso permanente)
-  'fernandamendesmiranda@gmail.com',   // Fernanda (casal)
-];
-
-var CLIENT_ID = '554655824814-9tn92aiunh1rb62jv6t7vi1caaq3r96j.apps.googleusercontent.com';
-
-function initGoogleLogin() {
-  var screen  = document.getElementById('login-screen');
-  var errEl   = document.getElementById('login-error');
-  var signBtn = document.getElementById('google-signin-btn');
-  if (!screen || !signBtn) return;
-
-  /* Verifica se já existe sessão salva */
-  var saved = sessionStorage.getItem('cg_user');
-  if (saved && AUTHORIZED_EMAILS.indexOf(saved) !== -1) {
-    unlockContent();
-    return;
-  }
-
-  function handleCredential(response) {
-    try {
-      var payload = JSON.parse(atob(response.credential.split('.')[1]));
-      var email   = (payload.email || '').toLowerCase().trim();
-      var allowed = AUTHORIZED_EMAILS.map(function(e){ return e.toLowerCase().trim(); });
-
-      if (allowed.indexOf(email) !== -1) {
-        sessionStorage.setItem('cg_user', email);
-        errEl.classList.remove('show');
-        unlockContent();
-      } else {
-        errEl.classList.add('show');
-      }
-    } catch(e) {
-      errEl.classList.add('show');
-    }
-  }
-
-  /* Inicializa Google Identity Services */
-  google.accounts.id.initialize({
-    client_id: CLIENT_ID,
-    callback: handleCredential,
-    use_fedcm_for_prompt: true,
-  });
-
-  /* Renderiza o BOTÃO OFICIAL do Google (compatível com Firefox/Safari/
-     bloqueadores de rastreamento — não depende de cookies de terceiros
-     como o método prompt()/One Tap depende) */
-  google.accounts.id.renderButton(signBtn, {
-    type: 'standard',
-    theme: 'filled_white',
-    size: 'large',
-    text: 'signin_with',
-    shape: 'rectangular',
-    logo_alignment: 'left',
-    width: 300,
-  });
-}
-
-function unlockContent() {
-  var screen = document.getElementById('login-screen');
-  if (screen) {
-    screen.classList.add('hidden');
-    setTimeout(function(){ screen.style.display = 'none'; }, 500);
-  }
-  document.body.style.overflow = '';
-}
-
-/* Bloqueia scroll enquanto login está visível */
-document.body.style.overflow = 'hidden';
-
-/* Aguarda o script do Google carregar */
-window.addEventListener('load', function() {
-  if (typeof google !== 'undefined' && google.accounts) {
-    initGoogleLogin();
-  } else {
-    /* fallback: tenta novamente após 1s */
-    setTimeout(initGoogleLogin, 1000);
-  }
-});
-</script>
-
-
-<script>
-/* ═══ INTRO — Vídeo MP4 → fade → Login ═════════════════════════════════════
-   Usa o evento 'ended' do vídeo para disparar a transição no momento exato
+/* ═══ INTRO — Vídeo MP4 → fade → Conteúdo (acesso direto) ══════════════════
+   Usa o evento 'ended' do vídeo para disparar a transição no momento exato.
+   Sem login: ao terminar, a intro desvanece revelando o conteúdo por baixo.
    ════════════════════════════════════════════════════════════════════════════ */
 (function(){
   var introEl  = document.getElementById('intro-screen');
   var videoEl  = document.getElementById('intro-video');
-  var loginEl  = document.getElementById('login-screen');
   var skipBtn  = document.getElementById('skip-intro');
-  if (!introEl || !videoEl || !loginEl) return;
+  if (!introEl || !videoEl) return;
 
   document.body.style.overflow = 'hidden';
 
@@ -1217,8 +1022,10 @@ window.addEventListener('load', function() {
     if (done) return;
     done = true;
     introEl.classList.add('fade-out');
-    setTimeout(function(){ loginEl.classList.add('fade-in'); }, 500);
-    setTimeout(function(){ introEl.style.display = 'none'; }, 1100);
+    setTimeout(function(){
+      introEl.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 1100);
   }
 
   /* ── Intro inteligente: mostra 1x por dia ── */
@@ -1228,9 +1035,9 @@ window.addEventListener('load', function() {
   try { lastSeen = localStorage.getItem(KEY); } catch(e) {}
 
   if (lastSeen === today) {
-    /* Já viu hoje: pula direto para o login */
+    /* Já viu hoje: pula direto para o conteúdo */
     introEl.style.display = 'none';
-    loginEl.classList.add('fade-in');
+    document.body.style.overflow = '';
     return;
   }
   try { localStorage.setItem(KEY, today); } catch(e) {}
