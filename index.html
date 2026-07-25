@@ -2,28 +2,26 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="msapplication-tap-highlight" content="no">
-<title>Fernanda &amp; Thiago — Cinegraphya</title>
-
-<!-- PWA -->
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-title" content="F &amp; T">
 <meta name="application-name" content="Fernanda &amp; Thiago">
+<title>Fernanda &amp; Thiago — Cinegraphya</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <script src="https://www.youtube.com/iframe_api"></script>
 <style>
 html,body,div,p,h1,h2,ul,li,button,a{margin:0;padding:0;border:0;box-sizing:border-box;-webkit-box-sizing:border-box;}
-:root{--red:#C9A876;--gold:#C9A876;--gold-light:#E4D4B8;--dark:#000;--white:#fff;--nav-h:68px;}
+:root{--red:#E50914;--gold:#C49E4E;--dark:#000;--white:#fff;--nav-h:68px;}
 html{width:100%;height:100%;background:#000;-webkit-text-size-adjust:100%;}
 body{width:100%;height:100%;background:#000;color:#fff;font-family:'Nunito',Helvetica,Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;}
 
@@ -62,26 +60,26 @@ body{width:100%;height:100%;background:#000;color:#fff;font-family:'Nunito',Helv
 /* ── Nav ── */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:0 4%;overflow:visible;}
 .logo{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:baseline;align-items:baseline;text-decoration:none;-webkit-user-select:none;user-select:none;-webkit-transition:opacity .3s ease;transition:opacity .3s ease;}
-.logo-c{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:var(--gold);line-height:1;}
-.logo-g{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:#F5EFE4;line-height:1;}
+.logo-c{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:var(--red);line-height:1;}
+.logo-g{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(24px,3.2vw,34px);letter-spacing:.04em;color:#EDE8DE;line-height:1;}
 
 /* ── Main ── */
 main{position:relative;z-index:10;padding-top:var(--nav-h);display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;}
 
 /* ── Hero ── */
-.hero{min-height:calc(100vh - var(--nav-h));padding:0 4% clamp(28px,4vh,56px);width:100%;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:flex-end;justify-content:flex-end;-webkit-animation:fadeUp .9s ease both;animation:fadeUp .9s ease both;overflow:visible;}
+.hero{-webkit-flex:1;flex:1;min-height:calc(100vh - var(--nav-h));padding:0 4% clamp(36px,5vh,64px);max-width:680px;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:flex-end;justify-content:flex-end;-webkit-animation:fadeUp .9s ease both;animation:fadeUp .9s ease both;overflow:visible;}
 .prod-label{font-family:'Nunito',sans-serif;font-size:clamp(10px,1.2vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.film-title{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(44px,7.5vw,92px);line-height:1.02;color:#F5EFE4;text-shadow:0 2px 32px rgba(0,0,0,.6);letter-spacing:.01em;max-width:720px;}
+.film-title{font-family:'Bebas Neue',Helvetica,sans-serif;font-size:clamp(48px,8vw,96px);line-height:.95;color:#fff;text-shadow:0 2px 32px rgba(0,0,0,.6);white-space:nowrap;letter-spacing:.02em;}
 .film-title .amp{color:var(--red);}
-.film-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(13px,1.5vw,17px);color:rgba(255,255,255,.66);line-height:1.55;margin:14px 0 18px;max-width:440px;}
+.film-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(14px,1.6vw,18px);color:rgba(255,255,255,.66);line-height:1.65;margin:18px 0 28px;max-width:440px;}
 
 
 
 /* ── Acordeão suspenso ── */
-.accordion{width:100%;margin-top:6px;}
+.accordion{width:100%;max-width:480px;margin-top:24px;}
 details.acc{border-bottom:1px solid rgba(255,255,255,.12);}
 details.acc:first-of-type{border-top:1px solid rgba(255,255,255,.12);}
-details.acc summary{list-style:none;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:16px;padding:13px 0;cursor:pointer;color:#F5EFE4;font-family:'Nunito',sans-serif;font-size:clamp(11px,1.3vw,13px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}details.acc summary::before{content:'';-webkit-flex:1;flex:1;height:1px;background:rgba(201,168,118,.35);order:2;}details.acc summary::-webkit-details-marker{display:none;}details.acc summary::marker{display:none;}details.acc summary::after{content:'+';font-size:20px;font-weight:200;color:var(--gold);-webkit-flex-shrink:0;flex-shrink:0;line-height:1;order:3;}details.acc[open] summary::after{content:'\2212';}
+details.acc summary{list-style:none;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:13px 0;cursor:pointer;color:#fff;font-family:'Nunito',sans-serif;font-size:clamp(11px,1.3vw,13px);font-weight:500;letter-spacing:.2em;text-transform:uppercase;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}details.acc summary::-webkit-details-marker{display:none;}details.acc summary::marker{display:none;}details.acc summary::after{content:'+';font-size:20px;font-weight:200;color:rgba(255,255,255,.55);-webkit-flex-shrink:0;flex-shrink:0;line-height:1;margin-left:12px;}details.acc[open] summary::after{content:'\2212';}
 details.acc summary:hover{color:rgba(255,255,255,.72);}
 
 
@@ -91,96 +89,22 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
 
 .acc-content{padding:6px 0 18px;}
 /* Lista de episódios no acordeão */
-/* ── Lista de episódios: cards horizontais estilo editorial ── */
-.ep-list{
-  list-style:none;padding:0;margin:0;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-@media(max-width:420px){
-  .ep-list{grid-template-columns:1fr;}
-}
-.ep-item{
-  position:relative;
-  width:100%;
-  height:clamp(100px,9vw,140px);
-  border:1px solid rgba(201,168,118,.3);
-  background:#0b0a08;
-  overflow:hidden;
-  -webkit-transition:border-color .25s ease;
-  transition:border-color .25s ease;
-}
-@media(max-width:640px){
-  .ep-item{height:88px;}
-}
-.ep-item:hover{border-color:rgba(201,168,118,.7);}
-.ep-link{
-  position:relative;
-  display:block;
-  width:100%;height:100%;
-  padding:0;background:none;border:none;color:inherit;
-  text-align:left;cursor:pointer;
-  -webkit-tap-highlight-color:transparent;font-family:inherit;
-}
-.ep-link:hover .ep-play-ov,.ep-link:focus .ep-play-ov{background:rgba(0,0,0,.35);}
-.ep-thumb-wrap{
-  position:absolute;top:0;right:0;bottom:0;
-  width:62%;
-}
-.ep-thumb-wrap::after{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(to right,#0b0a08 0%,rgba(11,10,8,.55) 40%,rgba(11,10,8,0) 78%);
-  pointer-events:none;
-}
-.ep-thumb-sizer{display:none;}
+.ep-list{list-style:none;padding:0;margin:0;}
+.ep-item{border-bottom:1px solid rgba(255,255,255,.06);}.ep-link{display:-webkit-flex;display:flex;-webkit-align-items:flex-start;align-items:flex-start;gap:14px;padding:12px 0;background:none;border:none;color:inherit;width:100%;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit;}
+.ep-item:last-child{border-bottom:none;}.ep-link:hover .ep-play-ov,.ep-link:focus .ep-play-ov{background:rgba(0,0,0,.45);}
+.ep-thumb-wrap{position:relative;-webkit-flex-shrink:0;flex-shrink:0;width:clamp(110px,14vw,170px);}
+.ep-thumb-sizer{width:100%;padding-top:56.25%;display:block;}
 .ep-thumb-ph{position:absolute;inset:0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;background:linear-gradient(135deg,#1c1c1c,#252525);border-radius:3px;}
 .ep-thumb-ph svg{width:22px;height:22px;opacity:.22;}
-.ep-thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:3px;background:#111;pointer-events:none;}
+.ep-thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#111;pointer-events:none;}.ep-thumb-sizer{display:none;}
 .ep-play-ov{position:absolute;inset:0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;background:rgba(0,0,0,0);border-radius:3px;-webkit-transition:background .18s;transition:background .18s;}
 
 .ep-play-ov svg{width:30px;height:30px;opacity:0;-webkit-transform:scale(.8);transform:scale(.8);-webkit-transition:opacity .18s,-webkit-transform .18s;transition:opacity .18s,transform .18s;}
 .ep-link:hover .ep-play-ov svg,.ep-link:focus .ep-play-ov svg{opacity:1;-webkit-transform:scale(1);transform:scale(1);}
-.ep-info{
-  position:absolute;top:0;left:0;bottom:0;
-  width:100%;z-index:2;
-  padding:0 16px 0 20px;
-  display:-webkit-flex;display:flex;
-  -webkit-align-items:center;align-items:center;
-  gap:14px;
-  pointer-events:none;
-}
-.ep-num{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(22px,2.4vw,30px);
-  font-weight:500;
-  color:var(--gold);
-  line-height:1;
-  -webkit-flex-shrink:0;flex-shrink:0;
-  opacity:.9;
-}
-.ep-info-text{min-width:0;-webkit-flex:1;flex:1;padding-top:4px;}
-.ep-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(15px,1.5vw,19px);
-  font-weight:500;
-  color:#F5EFE4;
-  margin-bottom:6px;
-  white-space:nowrap;
-  text-shadow:0 1px 10px rgba(0,0,0,.7);
-}
-.ep-title-rule{
-  width:22px;height:1px;
-  background:rgba(201,168,118,.6);
-  margin-bottom:9px;
-}
-.ep-meta{
-  font-family:'Nunito',sans-serif;font-size:10px;
-  color:rgba(245,239,228,.45);
-  letter-spacing:.06em;text-transform:uppercase;
-  text-shadow:0 1px 8px rgba(0,0,0,.7);
-}
+.ep-info{-webkit-flex:1;flex:1;min-width:0;padding-top:2px;}
+.ep-num{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;margin-bottom:3px;}
+.ep-title{font-family:'Nunito',sans-serif;font-size:clamp(12px,1.4vw,15px);font-weight:500;color:#fff;margin-bottom:3px;}
+.ep-meta{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.3);margin-bottom:5px;}
 .ep-desc{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(11px,1.2vw,14px);color:rgba(255,255,255,.5);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .acc-placeholder{font-family:'Crimson Pro',Georgia,serif;font-style:italic;font-size:clamp(12px,1.3vw,15px);color:rgba(255,255,255,.4);padding:4px 0 2px;}
 
@@ -248,7 +172,7 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
 @media(min-width:1920px){:root{--nav-h:82px;}.film-title{font-size:clamp(80px,5.5vw,120px);}}
 @media(min-width:3840px){.film-title{font-size:155px;}}
 
-@media(max-width:600px){.film-title{font-size:clamp(34px,11vw,52px);}}
+@media(max-width:600px){.film-title{font-size:clamp(36px,13vw,56px);white-space:normal;}}
 
 
 /* ── Monogram watermark ── */
@@ -262,9 +186,8 @@ details.acc summary:hover{color:rgba(255,255,255,.72);}
   left:50%;top:50%;
   -webkit-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
-  font-family:'Playfair Display',Georgia,serif;
-  font-weight:500;
-  font-size:clamp(20px,2.8vw,28px);
+  font-family:'Bebas Neue',Helvetica,sans-serif;
+  font-size:clamp(24px,3.2vw,34px);
   letter-spacing:.04em;color:#EDE8DE;
   opacity:0;pointer-events:none;
   white-space:nowrap;
@@ -307,49 +230,68 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
   -webkit-align-items:center;align-items:center;
   -webkit-justify-content:center;justify-content:center;
   -webkit-flex-direction:column;flex-direction:column;
-  gap:24px;
-  text-align:center;
-  padding:32px;
+  gap:24px;text-align:center;padding:32px;
 }
 #rotate-overlay.show{display:-webkit-flex;display:flex;}
 .rotate-icon{
   width:64px;height:64px;
   border:3px solid rgba(255,255,255,.7);
-  border-radius:12px;
-  position:relative;
+  border-radius:12px;position:relative;
   -webkit-animation:rotateHint 2s ease-in-out infinite;
   animation:rotateHint 2s ease-in-out infinite;
 }
 .rotate-icon::after{
-  content:'';
-  position:absolute;
-  top:8px;left:50%;
+  content:'';position:absolute;top:8px;left:50%;
   -webkit-transform:translateX(-50%);transform:translateX(-50%);
-  width:18px;height:28px;
-  border:2px solid rgba(255,255,255,.7);
-  border-radius:3px;
+  width:18px;height:28px;border:2px solid rgba(255,255,255,.7);border-radius:3px;
 }
-@-webkit-keyframes rotateHint{
-  0%,30%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
-  60%,100%{-webkit-transform:rotate(90deg);transform:rotate(90deg);}
+@-webkit-keyframes rotateHint{0%,30%{-webkit-transform:rotate(0deg);}60%,100%{-webkit-transform:rotate(90deg);}}
+@keyframes rotateHint{0%,30%{transform:rotate(0deg);}60%,100%{transform:rotate(90deg);}}
+.rotate-text{font-family:'Nunito',sans-serif;font-size:16px;font-weight:300;color:rgba(255,255,255,.75);letter-spacing:.04em;line-height:1.6;}
+.rotate-text strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:#fff;margin-bottom:6px;}
+
+/* ── Banner offline ── */
+#offline-banner{
+  position:fixed;top:0;left:0;right:0;
+  background:linear-gradient(to right,#5a1010,#7a1a1a);
+  color:#fff;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.05em;text-align:center;padding:10px 16px;z-index:100001;
+  -webkit-transform:translateY(-100%);transform:translateY(-100%);
+  -webkit-transition:-webkit-transform .3s ease;transition:transform .3s ease;
 }
-@keyframes rotateHint{
-  0%,30%{transform:rotate(0deg);}
-  60%,100%{transform:rotate(90deg);}
+#offline-banner.show{-webkit-transform:none;transform:none;}
+
+/* ── Loading spinner do player ── */
+.modal-loader{
+  position:absolute;inset:0;
+  display:-webkit-flex;display:flex;
+  -webkit-flex-direction:column;flex-direction:column;
+  -webkit-align-items:center;align-items:center;
+  -webkit-justify-content:center;justify-content:center;
+  gap:16px;z-index:1;background:#000;
+  -webkit-transition:opacity .3s ease;transition:opacity .3s ease;
 }
-.rotate-text{
-  font-family:'Nunito',sans-serif;
-  font-size:16px;font-weight:300;
-  color:rgba(255,255,255,.75);
-  letter-spacing:.04em;
-  line-height:1.6;
+.modal-loader.hide{opacity:0;pointer-events:none;}
+.spinner{
+  width:42px;height:42px;
+  border:3px solid rgba(255,255,255,.15);
+  border-top-color:var(--red);border-radius:50%;
+  -webkit-animation:spin .8s linear infinite;animation:spin .8s linear infinite;
 }
-.rotate-text strong{
-  display:block;
-  font-family:'Playfair Display',serif;font-weight:500;
-  font-size:20px;letter-spacing:.06em;
-  color:#F5EFE4;margin-bottom:6px;
+@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg);}}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loader-text{font-family:'Nunito',sans-serif;font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.08em;}
+.modal-error{
+  position:absolute;inset:0;display:none;
+  -webkit-flex-direction:column;flex-direction:column;
+  -webkit-align-items:center;align-items:center;
+  -webkit-justify-content:center;justify-content:center;
+  gap:14px;z-index:2;background:#000;text-align:center;padding:32px;
 }
+.modal-error.show{display:-webkit-flex;display:flex;}
+.modal-error-icon{font-size:38px;opacity:.5;}
+.modal-error-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.12em;color:#fff;}
+.modal-error-text{font-family:'Nunito',sans-serif;font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:340px;}
 
 /* ── Intro vídeo ── */
 #intro-screen{
@@ -372,81 +314,6 @@ details.acc[open] .ep-item:nth-child(4){-webkit-animation-delay:.21s;animation-d
   object-fit:contain;
   display:block;
 }
-/* ── Loading spinner do player ── */
-.modal-loader{
-  position:absolute;inset:0;
-  display:-webkit-flex;display:flex;
-  -webkit-flex-direction:column;flex-direction:column;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  gap:16px;z-index:1;
-  background:#000;
-  -webkit-transition:opacity .3s ease;transition:opacity .3s ease;
-}
-.modal-loader.hide{opacity:0;pointer-events:none;}
-.spinner{
-  width:42px;height:42px;
-  border:3px solid rgba(255,255,255,.15);
-  border-top-color:var(--red);
-  border-radius:50%;
-  -webkit-animation:spin .8s linear infinite;
-  animation:spin .8s linear infinite;
-}
-@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg);}}
-@keyframes spin{to{transform:rotate(360deg);}}
-.loader-text{
-  font-family:'Nunito',sans-serif;font-size:13px;
-  color:rgba(255,255,255,.45);letter-spacing:.08em;
-}
-/* ── Erro do player ── */
-.modal-error{
-  position:absolute;inset:0;
-  display:none;
-  -webkit-flex-direction:column;flex-direction:column;
-  -webkit-align-items:center;align-items:center;
-  -webkit-justify-content:center;justify-content:center;
-  gap:14px;z-index:2;background:#000;
-  text-align:center;padding:32px;
-}
-.modal-error.show{display:-webkit-flex;display:flex;}
-.modal-error-icon{font-size:38px;opacity:.5;}
-.modal-error-title{
-  font-family:'Playfair Display',serif;font-weight:500;font-size:19px;
-  letter-spacing:.04em;color:#F5EFE4;
-}
-.modal-error-text{
-  font-family:'Nunito',sans-serif;font-size:14px;
-  color:rgba(255,255,255,.5);line-height:1.6;max-width:340px;
-}
-
-/* ── Acessibilidade ── */
-/* Foco visível para navegação por teclado (não aparece no clique do mouse) */
-.ep-link:focus-visible,
-.modal-close:focus-visible,
-details.acc summary:focus-visible{
-  outline:3px solid var(--red);
-  outline-offset:3px;
-  border-radius:4px;
-}
-/* Respeita usuários que desativam animações no sistema */
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
-  }
-}
-/* Skip link para leitores de tela */
-.skip-link{
-  position:absolute;top:-48px;left:12px;
-  background:var(--red);color:#fff;
-  font-family:'Nunito',sans-serif;font-size:14px;
-  padding:10px 18px;border-radius:0 0 6px 6px;
-  z-index:100000;text-decoration:none;
-  transition:top .2s ease;
-}
-.skip-link:focus{top:0;}
 
 /* ── Botão pular intro ── */
 #skip-intro{
@@ -455,31 +322,13 @@ details.acc summary:focus-visible{
   border:1px solid rgba(255,255,255,.3);
   color:rgba(255,255,255,.85);
   font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;
-  letter-spacing:.08em;
-  padding:9px 20px;border-radius:6px;
-  cursor:pointer;z-index:2;
-  opacity:0;
-  -webkit-transition:opacity .4s ease,background .15s;
-  transition:opacity .4s ease,background .15s;
+  letter-spacing:.08em;padding:9px 20px;border-radius:6px;
+  cursor:pointer;z-index:2;opacity:0;
+  -webkit-transition:opacity .4s ease,background .15s;transition:opacity .4s ease,background .15s;
   -webkit-tap-highlight-color:transparent;
 }
 #skip-intro.visible{opacity:1;pointer-events:all;}
 #skip-intro:hover{background:rgba(229,9,20,.75);border-color:transparent;}
-
-/* ── Banner offline ── */
-#offline-banner{
-  position:fixed;top:0;left:0;right:0;
-  background:linear-gradient(to right,#5a1010,#7a1a1a);
-  color:#fff;
-  font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;
-  letter-spacing:.05em;text-align:center;
-  padding:10px 16px;
-  z-index:100001;
-  -webkit-transform:translateY(-100%);transform:translateY(-100%);
-  -webkit-transition:-webkit-transform .3s ease;transition:transform .3s ease;
-}
-#offline-banner.show{-webkit-transform:none;transform:none;}
-
 </style>
 </head>
 <body>
@@ -494,8 +343,6 @@ details.acc summary:focus-visible{
 <div class="ov" id="ov-b"></div>
 
 <!-- NAV -->
-<div id="offline-banner" role="status" aria-live="polite">&#128268; Voc&ecirc; est&aacute; offline &mdash; conecte-se para assistir aos v&iacute;deos</div>
-<a href="#main-content" class="skip-link">Pular para o conte&uacute;do</a>
 <!-- ═══ INTRO SCREEN ════════════════════════════════════════════ -->
 <div id="intro-screen">
   <button id="skip-intro" type="button" aria-label="Pular introdu&ccedil;&atilde;o">PULAR &rsaquo;</button>
@@ -508,6 +355,17 @@ details.acc summary:focus-visible{
 </div>
 <!-- ════════════════════════════════════════════════════════════ -->
 
+<!-- Overlay: girar dispositivo -->
+<div id="rotate-overlay" aria-live="polite" role="alert">
+  <div class="rotate-icon"></div>
+  <div class="rotate-text">
+    <strong>GIRE O DISPOSITIVO</strong>
+    Para a melhor experiência,<br>use no modo paisagem.
+  </div>
+</div>
+
+<div id="offline-banner" role="status" aria-live="polite">&#128268; Voc&ecirc; est&aacute; offline &mdash; conecte-se para assistir aos v&iacute;deos</div>
+
 <nav>
   <a href="#" class="logo focusable" aria-label="Cinegraphya">
     <span class="logo-c">CINE</span><span class="logo-g">GRAPHYA</span>
@@ -516,7 +374,7 @@ details.acc summary:focus-visible{
 </nav>
 
 <!-- CONTEÚDO -->
-<main id="main-content">
+<main>
   <div class="hero">
     <p class="prod-label">Cinegraphya · Produção Audiovisual</p>
     <div class="film-title-wrap">
@@ -524,16 +382,15 @@ details.acc summary:focus-visible{
     <h1 class="film-title">FERNANDA <span class="amp">&amp;</span> THIAGO</h1>
   </div>
     <p class="film-desc">Uma história de amor eternizada em imagens. A memória de um dos dias mais especiais de nossas vidas.</p>
-
   <!-- ACORDEÃO NATIVO — funciona sem JavaScript (iOS Quick Look, WhatsApp) -->
   <div class="accordion">
 
     <details class="acc" open>
       <summary>EPISÓDIOS</summary>
       <div class="acc-content">
-        <ul class="ep-list" role="list" id="ep-list">
+        <ul class="ep-list" role="list">
         <li class="ep-item" data-vid="dQw4w9WgXcQ" data-num="1" data-title="Cerimônia" data-meta="Filme completo" data-desc="O momento mais sagrado: votos, aliança e o início de uma nova história.">
-          <button class="ep-link" type="button" aria-label="Reproduzir: Cerimônia">
+          <button class="ep-link" type="button">
             <div class="ep-thumb-wrap">
               <span class="ep-thumb-sizer"></span>
               <div class="ep-thumb-ph"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
@@ -541,17 +398,14 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <span class="ep-num">01</span>
-              <div class="ep-info-text">
-                <p class="ep-title">Cerimônia</p>
-                <div class="ep-title-rule"></div>
-                <p class="ep-meta">Filme completo</p>
-              </div>
+              <p class="ep-num">1</p>
+              <p class="ep-title">Cerimônia</p>
+              <p class="ep-meta">Filme completo</p>
             </div>
           </button>
         </li>
         <li class="ep-item" data-vid="dQw4w9WgXcQ" data-num="2" data-title="Recepção" data-meta="Filme completo" data-desc="Dança, alegria e celebração perfeita com família e amigos.">
-          <button class="ep-link" type="button" aria-label="Reproduzir: Recepção">
+          <button class="ep-link" type="button">
             <div class="ep-thumb-wrap">
               <span class="ep-thumb-sizer"></span>
               <div class="ep-thumb-ph"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
@@ -559,17 +413,14 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <span class="ep-num">02</span>
-              <div class="ep-info-text">
-                <p class="ep-title">Recepção</p>
-                <div class="ep-title-rule"></div>
-                <p class="ep-meta">Filme completo</p>
-              </div>
+              <p class="ep-num">2</p>
+              <p class="ep-title">Recepção</p>
+              <p class="ep-meta">Filme completo</p>
             </div>
           </button>
         </li>
         <li class="ep-item" data-vid="dQw4w9WgXcQ" data-num="3" data-title="Making of" data-meta="Curta-metragem" data-desc="Os preparativos da noiva para o grande momento.">
-          <button class="ep-link" type="button" aria-label="Reproduzir: Making of">
+          <button class="ep-link" type="button">
             <div class="ep-thumb-wrap">
               <span class="ep-thumb-sizer"></span>
               <div class="ep-thumb-ph"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
@@ -577,17 +428,14 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <span class="ep-num">03</span>
-              <div class="ep-info-text">
-                <p class="ep-title">Making of</p>
-                <div class="ep-title-rule"></div>
-                <p class="ep-meta">Curta-metragem</p>
-              </div>
+              <p class="ep-num">3</p>
+              <p class="ep-title">Making of</p>
+              <p class="ep-meta">Curta-metragem</p>
             </div>
           </button>
         </li>
         <li class="ep-item" data-vid="dQw4w9WgXcQ" data-num="4" data-title="Teaser" data-meta="Curta-metragem" data-desc="Os principais momentos do casamento.">
-          <button class="ep-link" type="button" aria-label="Reproduzir: Teaser">
+          <button class="ep-link" type="button">
             <div class="ep-thumb-wrap">
               <span class="ep-thumb-sizer"></span>
               <div class="ep-thumb-ph"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
@@ -595,12 +443,9 @@ details.acc summary:focus-visible{
               <div class="ep-play-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
             <div class="ep-info">
-              <span class="ep-num">04</span>
-              <div class="ep-info-text">
-                <p class="ep-title">Teaser</p>
-                <div class="ep-title-rule"></div>
-                <p class="ep-meta">Curta-metragem</p>
-              </div>
+              <p class="ep-num">4</p>
+              <p class="ep-title">Teaser</p>
+              <p class="ep-meta">Curta-metragem</p>
             </div>
           </button>
         </li>
@@ -622,7 +467,6 @@ details.acc summary:focus-visible{
       </div>
     </details>
 
-  </div>
   </div>
 </main>
 
@@ -699,35 +543,36 @@ function onYouTubeIframeAPIReady() {
 // Se YT API não carregar em 7s (TV offline / bloqueio), mantém gradiente
 setTimeout(function(){if(!started)fb.style.opacity='1';}, 7000);
 
-/* ═══ Modal — com loading, erro e suporte ao botão voltar ══════════════════ */
+/* ═══ Modal — com loading, erro, legenda desativada e botão voltar ══════════ */
 var _modalLoadTimer = null;
 
 function openModal(id) {
   if (!id) return;
   var src = 'https://www.youtube.com/embed/' + id
-          + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=1';
+          + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=1'
+          + '&cc_load_policy=0&iv_load_policy=3'
+          + '&origin=' + encodeURIComponent(window.location.origin || window.location.href.split('/').slice(0,3).join('/'));
   var mf     = document.getElementById('mf');
   var m      = document.getElementById('modal');
   var loader = document.getElementById('modal-loader');
   var errEl  = document.getElementById('modal-error');
 
-  /* estado inicial: loader visível, erro oculto */
   if (loader) loader.classList.remove('hide');
   if (errEl)  errEl.classList.remove('show');
 
-  /* quando o iframe carregar, esconde o loader */
   mf.onload = function() {
     clearTimeout(_modalLoadTimer);
     if (loader) loader.classList.add('hide');
   };
 
-  /* timeout de 12s: se nada carregar, mostra erro */
   clearTimeout(_modalLoadTimer);
   _modalLoadTimer = setTimeout(function() {
     if (loader) loader.classList.add('hide');
     if (errEl)  errEl.classList.add('show');
   }, 12000);
 
+  /* Atribuição síncrona dentro do clique: preserva o "gesto do usuário"
+     que os navegadores exigem para permitir autoplay com som */
   mf.src = src;
   m.style.display = '-webkit-flex';
   m.style.display = 'flex';
@@ -769,7 +614,6 @@ window.addEventListener('popstate', function() {
   var m = document.getElementById('modal');
   if (m && m.classList.contains('open')) closeModal(true);
 });
-
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',function(e){
   var modal=document.getElementById('modal');
@@ -798,20 +642,14 @@ document.addEventListener('keydown',function(e){
         var progress = Math.min(scrollY / (heroH * 0.5), 1);
         var ease     = progress < .5 ? 2*progress*progress : -1+(4-2*progress)*progress;
 
-        /* hero (label + título + descrição): desvanece até 22%, sem sumir */
-        var heroFade = Math.max(1 - ease * 1.3, 0.22);
-        var heroEls = [
-          document.querySelector('.prod-label'),
-          heroTitle,
-          document.querySelector('.film-desc')
-        ];
-        heroEls.forEach(function(el){ if (el) el.style.opacity = heroFade; });
-        heroTitle.style.transform = 'translateY(' + (-ease * 10) + 'px)';
+        /* título hero: some rapidamente */
+        heroTitle.style.opacity   = Math.max(1 - ease * 3, 0);
+        heroTitle.style.transform = 'translateY(' + (-ease * 12) + 'px)';
 
-        /* logo: some completamente antes de ease=0.33 */
+        /* logo: some COMPLETAMENTE antes de ease=0.33 */
         if (navLogo) navLogo.style.opacity = Math.max(1 - ease * 3, 0);
 
-        /* título fixo: só aparece após ease>0.65 */
+        /* título fixo: só aparece após ease>0.65 — logo já sumiu */
         var fadeIn = Math.max((ease - 0.65) * 3, 0);
         scrollTitle.style.opacity = Math.min(fadeIn, 1);
 
@@ -879,47 +717,7 @@ document.addEventListener('keydown',function(e){
     });
   });
 })();
-
-function toggleAcc(id) {
-  var wasOpen = document.getElementById('acc-'+id).classList.contains('open');
-
-  /* fecha todos */
-  ACC_IDS.forEach(function(k) {
-    document.getElementById('acc-'+k).classList.remove('open');
-    document.getElementById('body-'+k).style.display = 'none';
-    document.querySelector('#acc-'+k+' .acc-header').setAttribute('aria-expanded','false');
-  });
-
-  /* abre o clicado se estava fechado */
-  if (!wasOpen) {
-    document.getElementById('acc-'+id).classList.add('open');
-    document.getElementById('body-'+id).style.display = 'block';
-    document.querySelector('#acc-'+id+' .acc-header').setAttribute('aria-expanded','true');
-  }
-}
-
-/* liga clique via addEventListener (mais confiável que onclick= no WebView) */
-document.querySelectorAll('.acc-header').forEach(function(btn) {
-  var id = btn.getAttribute('aria-controls').replace('body-','');
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    toggleAcc(id);
-  });
-  btn.addEventListener('keydown', function(e) {
-    if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleAcc(id); }
-    var its = Array.from(document.querySelectorAll('.acc-header')), i = its.indexOf(btn);
-    if ((e.key==='ArrowDown'||e.keyCode===40) && i<its.length-1) its[i+1].focus();
-    if ((e.key==='ArrowUp'  ||e.keyCode===38) && i>0)            its[i-1].focus();
-  });
-});
-
-/* abre EPISÓDIOS ao carregar */
-document.getElementById('acc-ep').classList.add('open');
-document.querySelector('#acc-ep .acc-header').setAttribute('aria-expanded','true');
-document.getElementById('body-ep').style.display = 'block';
 </script>
-
-
 
 <script>
 /* ── Episódios: clique/tap abre modal diretamente ── */
@@ -939,9 +737,16 @@ document.getElementById('body-ep').style.display = 'block';
       e.stopPropagation();
       openModal(item.dataset.vid);
     });
+
+    // previne qualquer comportamento de navegação residual
+    btn.addEventListener('touchend', function(e){
+      e.preventDefault();
+      openModal(item.dataset.vid);
+    });
   });
 })();
 </script>
+
 <script>
 /* ── Registro do Service Worker (PWA) ── */
 if ('serviceWorker' in navigator) {
@@ -954,60 +759,9 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-<!-- Overlay: girar dispositivo -->
-<div id="rotate-overlay" aria-live="polite" role="alert">
-  <div class="rotate-icon"></div>
-  <div class="rotate-text">
-    <strong>GIRE O DISPOSITIVO</strong>
-    Para a melhor experiência,<br>use no modo paisagem.
-  </div>
-</div>
-
-
 <script>
-/* ── Orientação: landscape obrigatório em mobile, livre no desktop ── */
-(function(){
-  var overlay = document.getElementById('rotate-overlay');
-  if (!overlay) return;
-
-  /* Desktop: pointer:fine e largura > 1024px → ignora tudo */
-  var isDesktop = window.matchMedia('(pointer:fine) and (min-width:1024px)').matches;
-  if (isDesktop) return;
-
-  /* Tentar travar orientação via API (Android PWA standalone) */
-  function tryLock(){
-    var so = screen.orientation || screen.mozOrientation || screen.msOrientation;
-    if (so && so.lock) {
-      so.lock('landscape').catch(function(){});
-    }
-  }
-  tryLock();
-  /* Tentar novamente quando o app entrar em foco (útil após install) */
-  document.addEventListener('visibilitychange', function(){
-    if (!document.hidden) tryLock();
-  });
-
-  /* Overlay: aparece em portrait, some em landscape */
-  function checkOrientation(){
-    var portrait = window.innerHeight > window.innerWidth;
-    overlay.classList.toggle('show', portrait);
-    /* Bloqueia scroll da página por baixo quando overlay visível */
-    document.body.style.overflow = portrait ? 'hidden' : '';
-  }
-
-  checkOrientation();
-  window.addEventListener('resize',       checkOrientation, { passive:true });
-  window.addEventListener('orientationchange', function(){
-    setTimeout(checkOrientation, 120);
-  }, { passive:true });
-})();
-</script>
-
-
-<script>
-/* ═══ INTRO — Vídeo MP4 → fade → Conteúdo (acesso direto) ══════════════════
+/* ═══ INTRO — Vídeo MP4 → fade → Conteúdo ═══════════════════════════════════
    Usa o evento 'ended' do vídeo para disparar a transição no momento exato.
-   Sem login: ao terminar, a intro desvanece revelando o conteúdo por baixo.
    ════════════════════════════════════════════════════════════════════════════ */
 (function(){
   var introEl  = document.getElementById('intro-screen');
@@ -1035,7 +789,6 @@ if ('serviceWorker' in navigator) {
   try { lastSeen = localStorage.getItem(KEY); } catch(e) {}
 
   if (lastSeen === today) {
-    /* Já viu hoje: pula direto para o conteúdo */
     introEl.style.display = 'none';
     document.body.style.overflow = '';
     return;
@@ -1063,37 +816,55 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
+<script>
+/* ═══ Orientação: landscape sugerido em mobile, livre no desktop ═══════════ */
+(function(){
+  var overlay = document.getElementById('rotate-overlay');
+  if (!overlay) return;
+  var isDesktop = window.matchMedia('(pointer:fine) and (min-width:1024px)').matches;
+  if (isDesktop) return;
+
+  function tryLock(){
+    var so = screen.orientation || screen.mozOrientation || screen.msOrientation;
+    if (so && so.lock) { so.lock('landscape').catch(function(){}); }
+  }
+  tryLock();
+  document.addEventListener('visibilitychange', function(){
+    if (!document.hidden) tryLock();
+  });
+
+  function checkOrientation(){
+    var portrait = window.innerHeight > window.innerWidth;
+    overlay.classList.toggle('show', portrait);
+    document.body.style.overflow = portrait ? 'hidden' : '';
+  }
+  checkOrientation();
+  window.addEventListener('resize', checkOrientation, { passive:true });
+  window.addEventListener('orientationchange', function(){
+    setTimeout(checkOrientation, 120);
+  }, { passive:true });
+})();
+</script>
 
 <script>
 /* ═══ Detector de conexão ═══════════════════════════════════════════════════ */
 (function(){
   var banner = document.getElementById('offline-banner');
   if (!banner) return;
-  function update(){
-    banner.classList.toggle('show', !navigator.onLine);
-  }
+  function update(){ banner.classList.toggle('show', !navigator.onLine); }
   window.addEventListener('online',  update);
   window.addEventListener('offline', update);
   update();
 })();
 </script>
 
-
 <script>
-/* ═══ Tela cheia imersiva ═══════════════════════════════════════════════════
-   • PWA instalado: manifest "fullscreen" cuida de tudo (Android) /
-     apple-mobile-web-app-capable cuida do iOS
-   • Navegador comum: browsers exigem um gesto do usuário para permitir
-     fullscreen — solicitamos na PRIMEIRA interação (toque/clique/tecla)
-   • iPhone Safari não suporta a Fullscreen API — lá a imersão total
-     acontece ao instalar via "Adicionar à Tela de Início"
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* ═══ Tela cheia imersiva — solicitada na primeira interação ═══════════════ */
 (function(){
-  /* Já está em modo app instalado? Não precisa fazer nada */
   var isStandalone =
     (window.matchMedia && (window.matchMedia('(display-mode: fullscreen)').matches ||
                            window.matchMedia('(display-mode: standalone)').matches)) ||
-    (window.navigator.standalone === true); /* iOS PWA */
+    (window.navigator.standalone === true);
   if (isStandalone) return;
 
   var docEl = document.documentElement;
@@ -1101,7 +872,7 @@ if ('serviceWorker' in navigator) {
              || docEl.webkitRequestFullscreen
              || docEl.mozRequestFullScreen
              || docEl.msRequestFullscreen;
-  if (!request) return; /* iPhone Safari: API inexistente */
+  if (!request) return;
 
   var done = false;
   function goFullscreen(){
@@ -1115,13 +886,10 @@ if ('serviceWorker' in navigator) {
       document.removeEventListener(ev, goFullscreen, true);
     });
   }
-
-  /* primeira interação de qualquer tipo dispara o fullscreen */
   ['pointerdown','touchend','keydown'].forEach(function(ev){
     document.addEventListener(ev, goFullscreen, true);
   });
 })();
 </script>
-
 </body>
 </html>
