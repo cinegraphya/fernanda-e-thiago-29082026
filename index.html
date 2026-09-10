@@ -33,8 +33,12 @@ body{width:100%;height:100%;background:#000;color:#fff;font-family:'Nunito',Helv
 #video-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;background:#0d0d0d;}
 #yt-wrap{
   position:absolute;top:50%;left:50%;
-  width:calc(177.8vh + 300px);height:calc(56.25vw + 300px);
-  min-width:calc(100vw + 300px);min-height:calc(100vh + 200px);
+  /* Fallback para navegadores antigos (algumas Smart TVs) sem suporte a max() */
+  width:calc(177.8vh + 100px);height:calc(56.25vw + 100px);
+  min-width:calc(100vw + 100px);min-height:calc(100vh + 100px);
+  /* Cobertura precisa, sem zoom excedente — sobrescreve em navegadores modernos */
+  width:max(100vw,177.78vh);
+  height:max(100vh,56.25vw);
   -webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
   pointer-events:none;
 }
